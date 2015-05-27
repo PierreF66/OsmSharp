@@ -10,7 +10,19 @@ namespace OsmSharp.Samples
         {
             var result = new List<tile>();
 
-            var tileFiles = new []
+            foreach (var tileFile in GetTileFiles())
+            {
+                var resource = string.Format("OsmSharp.Samples.Resources.vectortiles.{0}", tileFile);
+                var vectorTileStream = typeof(SampleDataLoader).Assembly.GetManifestResourceStream(resource);
+                result.Add( Serializer.Deserialize<tile>(vectorTileStream));
+            }
+
+            return result;
+        }
+
+        private static string[] GetTileFiles()
+        {
+            return new[]
             {
                 "0_0_0_vector.pbf",
                 "1_0_0_vector.pbf",
@@ -26,15 +38,6 @@ namespace OsmSharp.Samples
                 "2_3_0_vector.pbf",
                 "2_3_1_vector.pbf"
             };
-
-            foreach (var tileFile in tileFiles)
-            {
-                var resource = string.Format("OsmSharp.Samples.Resources.vectortiles.{0}", tileFile);
-                var vectorTileStream = typeof(SampleDataLoader).Assembly.GetManifestResourceStream(resource);
-                result.Add( Serializer.Deserialize<tile>(vectorTileStream));
-            }
-
-            return result;
         }
     }
 }

@@ -82,6 +82,7 @@
     <Compile Include="Map\Layers\LayerRoute.cs" />
     <Compile Include="Map\Layers\LayerScene.cs" />
     <Compile Include="Map\Layers\LayerTile.cs" />
+    <Compile Include="Map\Layers\LayerVectorTile.cs" />
     <Compile Include="Map\Map.cs" />
     <Compile Include="Map\MapRenderer.cs" />
     <Compile Include="Map\Styles\MapCSS\IMapCSSImageSource.cs" />
@@ -191,6 +192,10 @@
     <ProjectReference Include="..\OsmSharp.Routing\OsmSharp.Routing.csproj">
       <Project>{2F4D2B40-D557-4640-96E1-693D598012A6}</Project>
       <Name>OsmSharp.Routing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OsmSharp.Samples\OsmSharp.Samples.csproj">
+      <Project>{34b6cfd9-2338-4671-a6c7-838d2772f35f}</Project>
+      <Name>OsmSharp.Samples</Name>
     </ProjectReference>
     <ProjectReference Include="..\OsmSharp\OsmSharp.csproj">
       <Project>{077997FD-A61D-4DC0-B4B0-7429BF9824E8}</Project>
